@@ -1,24 +1,8 @@
 #ifndef draw_hh
 #define draw_hh
+#include "Command.h"
 
 using namespace std;
-
-class Command: public Instruction {
-	protected:
-		static float value;
-	public:
-		Command();					
-		// Default Constructor
-		
-		Command(int value);		
-		// Constructor
-		
-		~Command();				
-		// Destructor
-		
-		virtual void draw();			
-		// Virtual draw
-}
 
 
 class Left: public Command{

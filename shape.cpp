@@ -34,11 +34,11 @@ int main ( int argc, char** argv )   // Create Main Function For Bringing It All
 {
 	Prog P;
 		
-	/* ADD ERROR CHECKING FOR COMMAND LINE */
+	/* JL - ADD ERROR CHECKING FOR COMMAND LINE */
 	ifstream in(argv[1]);	// Open file from command line
 	
 	try {
-	  in >> P;		// Push 
+	  in >> P;		// Push file contents into program
 	}
 	catch (IncompleteInstructionException& e) {
 	  cerr << "IncompleteInstructionException occurred" << endl;
