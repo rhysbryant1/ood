@@ -1,6 +1,7 @@
 #ifndef draw_hh
 #define draw_hh
 
+#include <window.h>
 using namespace std;
 
 class Command: public Instruction {
