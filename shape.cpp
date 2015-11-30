@@ -1,6 +1,7 @@
 // assign1011.cpp : Defines the entry point for the console application.
 //
 
+#include "Header.h"
 #include "window.h"
 
 void draw(void)   
@@ -31,6 +32,19 @@ void draw(void)
 
 int main ( int argc, char** argv )   // Create Main Function For Bringing It All Together
 {
-	window w(argc,argv);  
+//	window w(argc,argv);
+	
+	try {
+  
+	}
+	catch (IncompleteInstructionException& e) {
+	  cerr << "IncompleteInstructionException occurred" << endl;
+	}
+	catch (BadfileException& e) {
+	  cerr << "BadfileException occurred." << endl;
+	}
+	
+	
+	return 0;
 }
 
