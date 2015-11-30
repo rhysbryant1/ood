@@ -12,7 +12,6 @@ class Instruction
 private:
     string name;
     int value;
-    int* next;
 
 public:
     friend istream& operator>> (istream& in, Instruction& instr);

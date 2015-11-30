@@ -38,7 +38,7 @@ int main ( int argc, char** argv )   // Create Main Function For Bringing It All
 	ifstream in(argv[1]);	// Open file from command line
 	
 	try {
-	  in >> P;
+	  in >> P;		// Push 
 	}
 	catch (IncompleteInstructionException& e) {
 	  cerr << "IncompleteInstructionException occurred" << endl;
