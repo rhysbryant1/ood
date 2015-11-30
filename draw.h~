@@ -11,7 +11,7 @@ class Command: public Instruction {
 		Command();					
 		// Default Constructor
 		
-		Command(int value);		
+		Command(int input);		
 		// Constructor
 		
 		~Command();				
