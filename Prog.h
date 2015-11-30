@@ -5,15 +5,14 @@
 #include "Instruction.h"
 
 class Prog {
-	private:
-		vector <Instruction*> list;
-	public: 
-		void Prog();
-		void ~Prog();		
-		void run();
-		freind istream& operator >>
-		  
+  private:
+    vector <Instruction*> list;					// Vector of Instructions
+  
+  public:
+    friend istream& operator>> (istream& in, string file_path);	// Overload input operator
+    void Prog();
+    void ~Prog();		
+    void run();
 };
-
 
 #endif

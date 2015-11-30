@@ -1,5 +1,5 @@
 #include <stream>
-#include "instruction.h"
+#include "Instruction.h"
 
 istream& operator>> (istream& in, Instruction& instr)
 {
