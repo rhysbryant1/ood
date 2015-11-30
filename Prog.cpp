@@ -25,6 +25,7 @@ void Prog::run(){
 
 	for (int increment = 0 ; increment<=list.size ; increment++)
 	{
+/*------------ Iterating through all items in the list --------------*/
 		try{
 			list[increment].draw();
 		}
@@ -33,4 +34,5 @@ void Prog::run(){
 		}
 	
 	}
+/* ---------- Finish ---------------------------*/
 };

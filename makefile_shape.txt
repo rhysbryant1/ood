@@ -24,11 +24,18 @@ PROG=$(PROGNAME)
 OBJ=$(PROGNAME).o
 SRC=$(PROGNAME).cpp
 
-$(PROG): $(OBJ)
-	 $(CC) $(OBJ) -L$(GLLIBDIR) -L$(GLUTLIBDIR) -L$(GLXLIB) $(GLLIB) -o $(PROG)
+$(PROG): $(OBJ) prog.o draw.o
+	 $(CC) $(OBJ) -L$(GLLIBDIR) -L$(GLUTLIBDIR) -L$(GLXLIB) $(GLLIB) -o $(PROG) 
 
 $(OBJ): $(SRC)
 	 $(CC) -I$(GLINCDIR) -I$(GLUTINCDIR) -c $(SRC)
+
+Prog.o: Prog.cpp Prog.h
+	$(CC) -c Prog.cpp
+
+draw.o: draw.cpp draw.h
+	$(CC) -c draw.cpp
+
 
 clean: 
 	/bin/rm -rf $(OBJ) $(PROG)
