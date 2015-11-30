@@ -35,7 +35,7 @@ int main ( int argc, char** argv )   // Create Main Function For Bringing It All
 	Prog P;
 		
 	/* ADD ERROR CHECKING FOR COMMAND LINE */
-	ifstream in(argv[1]);	// Open file from command line
+	ifstream in(argv[1]);		// Open file from command line
 	
 	try {
 	  in >> P;
@@ -46,9 +46,8 @@ int main ( int argc, char** argv )   // Create Main Function For Bringing It All
 	catch (BadfileException& e) {
 	  cerr << "BadfileException occurred." << endl;
 	}
-	
-	in.close;		// Close file
-	window w(argc, argv);	
+	in.close;
+	window w(argc, argv);
 	
 	return 0;
 }
