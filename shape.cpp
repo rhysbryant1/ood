@@ -3,9 +3,13 @@
 
 #include "Header.h"
 #include "window.h"
+#include "Prog.h"
+
+Prog P;
 
 void draw(void)   
 {
+/*
 	glBegin(GL_LINE_LOOP);								// Draw the 3 connected verticies of a triangle
 		glVertex3f( 0.0f, 1.0f, 0.0f);					// Top
 		glVertex3f(-1.0f,-1.0f, 0.0f);					// Bottom Left
@@ -28,11 +32,11 @@ void draw(void)
 		glVertex3f( 1.0f,-1.0f, 0.0f);					// Bottom Right
 		glVertex3f(-1.0f,-1.0f, 0.0f);					// Bottom Left
 	glEnd();
+*/
 }
 
-int main ( int argc, char** argv )   // Create Main Function For Bringing It All Together
+int main ( int argc, char** argv )
 {
-	Prog P;
 		
 	/* JL - ADD ERROR CHECKING FOR COMMAND LINE */
 	ifstream in(argv[1]);	// Open file from command line
@@ -43,11 +47,11 @@ int main ( int argc, char** argv )   // Create Main Function For Bringing It All
 	catch (IncompleteInstructionException& e) {
 	  cerr << "IncompleteInstructionException occurred" << endl;
 	}
-	catch (BadfileException& e) {
+	catch (InvalidInstructionTypeException& e) {
 	  cerr << "BadfileException occurred." << endl;
 	}
 	
-	in.close;		// Close file
+	in.close();		// Close file
 	window w(argc, argv);	
 	
 	return 0;

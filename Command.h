@@ -1,6 +1,8 @@
 #include "Header.h"
 #include "Instruction.h"
 
+class IncompleteInstructionException{};
+
 class Command: public Instruction {
 	private:
 		Command();		// Default constructor - can not be instantiated

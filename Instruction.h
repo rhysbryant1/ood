@@ -8,11 +8,11 @@ class IncompleteInstructionException {};
 class Instruction
 {
 	private:
-		virtual Instruction() {};	// Private default constructor - class can not be instantiated
+		Instruction() {};		// Private default constructor - class can not be instantiated
 
 	public:
 		virtual ~Instruction();
-		virtual void Run();		// From Rich's design??
+		virtual void Run()=0;		// From Rich's design??
 };
 
 #endif

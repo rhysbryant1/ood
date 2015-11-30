@@ -3,7 +3,7 @@
 #include "Header.h"
 #include "Instruction.h"
 
-class InvalidInstructionTypeException;
+class InvalidInstructionTypeException{};
 
 class Prog {
 	private:
@@ -14,7 +14,7 @@ class Prog {
 		friend istream& operator>> (istream& in, Prog& prg);	// Overload input operator
 		Prog();
 		~Prog();		
-		run();
+		void run();
 };
 
 #endif

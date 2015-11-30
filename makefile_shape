@@ -24,14 +24,20 @@ PROG=$(PROGNAME)
 OBJ=$(PROGNAME).o
 SRC=$(PROGNAME).cpp
 
-$(PROG): $(OBJ) prog.o draw.o
+$(PROG): $(OBJ) prog.o Instruction.o Command.o draw.o
 	 $(CC) $(OBJ) -L$(GLLIBDIR) -L$(GLUTLIBDIR) -L$(GLXLIB) $(GLLIB) -o $(PROG) 
 
-$(OBJ): $(SRC)
+$(OBJ): $(SRC) Prog.h
 	 $(CC) -I$(GLINCDIR) -I$(GLUTINCDIR) -c $(SRC)
 
 Prog.o: Prog.cpp Prog.h
 	$(CC) -c Prog.cpp
+
+Instruction.o: Instruction.cpp Instruction.h
+	$(CC) -c Instruction.cpp
+
+Command.o: Command.cpp Command.h
+	$(CC) -c Command.cpp
 
 draw.o: draw.cpp draw.h
 	$(CC) -c draw.cpp
