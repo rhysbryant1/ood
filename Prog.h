@@ -2,6 +2,7 @@
 #define Prog_h
 #include "Header.h"
 #include "Instruction.h"
+#include "draw.h"
 
 class InvalidInstructionTypeException{};
 

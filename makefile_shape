@@ -24,7 +24,7 @@ PROG=$(PROGNAME)
 OBJ=$(PROGNAME).o
 SRC=$(PROGNAME).cpp
 
-$(PROG): $(OBJ) prog.o Instruction.o Command.o draw.o
+$(PROG): $(OBJ) Prog.o Instruction.o Command.o draw.o
 	 $(CC) $(OBJ) -L$(GLLIBDIR) -L$(GLUTLIBDIR) -L$(GLXLIB) $(GLLIB) -o $(PROG) 
 
 $(OBJ): $(SRC) Prog.h

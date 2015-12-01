@@ -56,10 +56,10 @@ class Jump: public Command{
 
 class Repeat: public Command{
 	public:
-		Reapeat();
+		Repeat();
 		// Default Constructor
 		
-		~Reapeat();
+		~Repeat();
 		// Destructor
 		
 		void draw();
