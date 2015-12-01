@@ -1,3 +1,6 @@
+#ifndef Instruction_h
+#define Instruction_h
+
 #include "Header.h"
 
 class IncompleteInstructionException {};
@@ -16,3 +19,5 @@ public:
     virtual void draw();
 
 };
+
+#endif
