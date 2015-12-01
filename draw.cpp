@@ -32,7 +32,7 @@ void Right::draw()
 {
 	// Rotate around the z axis by the angle value for this instruction.
 	// This rotation will be negative to turn the other way.
-	rotation = 0 - Right::angle
+	int rotation(0 - Right::value);	
 	glRotate(rotation, 0, 0, 1)
 }
 
@@ -48,8 +48,8 @@ void Forward::draw()
 {
 	// Draw a line of a length for the value in this class
 	glBegin(GL_LINE_LOOP);
-		glVertex3f(0, 0, 0);			// Beginning of line
-		glVertex3f(length, 0, 0);		// End of line
+		glVertex3f(0, 0, 0);				// Beginning of line
+		glVertex3f(Right::value, 0, 0);		// End of line
 	glEnd();
 }
 
@@ -64,7 +64,7 @@ Jump::~Jump(){}				// Destructor
 void Jump::draw()
 {
 	// Translate the cursor for distance of the value in this class.
-	glTranslate(Jump.value, 0, 0)
+	glTranslate(Jump::value, 0, 0)
 
 }
 
