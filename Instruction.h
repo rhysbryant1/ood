@@ -7,17 +7,12 @@ class IncompleteInstructionException {};
 
 class Instruction
 {
-//    friend List;
+	private:
+		Instruction() {};		// Private default constructor - class can not be instantiated
 
-private:
-    string name;
-    int value;
-    int* next;
-
-public:
-    friend istream& operator>> (istream& in, Instruction& instr);
-    virtual void draw();
-
+	public:
+		virtual ~Instruction();
+		virtual void Run()=0;		// From Rich's design??
 };
 
 #endif
