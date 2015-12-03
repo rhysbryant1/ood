@@ -53,7 +53,7 @@ void Forward::draw()
 	glEnd();
 	
 	// Translate to the new vector loaction
-	glTranslatef(Right::value, 0, 0);
+	glTranslatef(Forward::value, 0, 0);
 }
 
 /*--------------------------------------------------------------*/
