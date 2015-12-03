@@ -51,6 +51,9 @@ void Forward::draw()
 		glVertex3f(0, 0, 0);				// Beginning of line
 		glVertex3f(Forward::value, 0, 0);		// End of line
 	glEnd();
+	
+	// Translate to the new vector loaction
+	glTranslatef(Right::value, 0, 0);
 }
 
 /*--------------------------------------------------------------*/
