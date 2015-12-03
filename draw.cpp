@@ -1,170 +1,84 @@
-#include <window.h>
-#include <draw.h>
-#include <Instruction.h>
-#include <Prog.h>
-#include <Header.h>
+#include "window.h"
+#include "draw.h"
+#include "Instruction.h"
+#include "Prog.h"
+#include "Header.h"
 
 
 /*--------------------------------------------------------------*/
 /* Left Class */
 /*--------------------------------------------------------------*/
 
-/*-------------------------------------*/
-// Default Constructor
+Left::Left(){}				// Default Constructor
+Left::~Left(){}				// Destructor
 
-Left::Left()
-{
-
-
-}
-
-/*-------------------------------------*/
-// Destructor
-
-Left::~Left()
-{
-
-
-}
-
-/*-------------------------------------*/
-// Draw function
-
+// Draw function (Virtual)
 void Left::draw()
 {
 	// Rotate around the z axis by the angle value for this instruction
-	rotation = Left.value
-	glRotate(rotation, 0, 0, 1)
-
+	glRotate(Left::value, 0, 0, 1)
 }
-
 
 /*--------------------------------------------------------------*/
 /* Right Class */
 /*--------------------------------------------------------------*/
 
-/*-------------------------------------*/
-// Default Constructor
-
-Right::Right()
-{
+Right::Right(){}			// Default Constructor
+Right::~Right(){}			// Destuctor
 
 
-}
-
-/*-------------------------------------*/
-// Destructor
-
-Right::~Right()
-{
-
-
-}
-
-/*-------------------------------------*/
-// Draw function
-
+// Draw function (Virtual)
 void Right::draw()
 {
 	// Rotate around the z axis by the angle value for this instruction.
 	// This rotation will be negative to turn the other way.
-	rotation = 0 - Right.value
+	int rotation(0 - Right::value);	
 	glRotate(rotation, 0, 0, 1)
 }
-
-
 
 /*--------------------------------------------------------------*/
 /* Forward Class */
 /*--------------------------------------------------------------*/
 
-/*-------------------------------------*/
-// Default Constructor
+Forward::Forward(){}		// Default Constrcutor
+Forward::~Forward(){}		// Destructor
 
-Forward::Forward()
-{
-
-
-}
-
-/*-------------------------------------*/
-// Destructor
-
-Forward::~Forward()
-{
-
-
-}
-
-/*-------------------------------------*/
-// Draw function
-
+// Draw function (Virtual)
 void Forward::draw()
 {
-
+	// Draw a line of a length for the value in this class
+	glBegin(GL_LINE_LOOP);
+		glVertex3f(0, 0, 0);				// Beginning of line
+		glVertex3f(Right::value, 0, 0);		// End of line
+	glEnd();
+	
+	// Translate to the new vector loaction
+	glTranslatef(Right::value, 0, 0);
 }
-
-
-
 
 /*--------------------------------------------------------------*/
 /* Jump Class */
 /*--------------------------------------------------------------*/
 
-/*-------------------------------------*/
-// Default Constructor
+Jump::Jump(){}				// Default Constructor
+Jump::~Jump(){}				// Destructor
 
-Jump::Jump()
-{
-
-
-}
-
-/*-------------------------------------*/
-// Destructor
-
-Jump::~Jump()
-{
-
-
-}
-
-/*-------------------------------------*/
-// Draw function
-
+// Draw function (Virtual)
 void Jump::draw()
 {
+	// Translate the cursor for distance of the value in this class.
+	glTranslate(Jump::value, 0, 0)
 
 }
-
-
-
 
 /*--------------------------------------------------------------*/
 /* Repeat Class */
 /*--------------------------------------------------------------*/
 
-/*-------------------------------------*/
-// Default Constructor
+Repeat::Reapeat(){}			// Default Constructor
+Repeat::~Repeat(){}			// Destuctor
 
-Repeat::Reapeat()
-{
-
-
-}
-
-/*-------------------------------------*/
-// Destructor
-
-Repeat::~Repeat()
-{
-
-
-}
-
-/*-------------------------------------*/
-// Draw function
-
+// Draw function (Virtual)
 void Repeat::draw()
 {
 

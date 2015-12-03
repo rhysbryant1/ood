@@ -1,19 +1,23 @@
+#ifndef Command_hh
+#define Command_hh
 #include "Header.h"
 #include "Instruction.h"
 
 class IncompleteInstructionException{};
 
 class Command: public Instruction {
-	private:
-		Command();				// Default constructor - can not be instantiated
+
 	protected:
-		static float value;
+		Command();			// Default constructor - can not be instantiated
+		float value;
+	
 	public:
-		Command(int value);		// Constructor
-		~Command();				// Destructor
-
+		// Overloaded input operator
+    		friend istream& operator>> (istream& in, Command& cmd);
 		
-    	friend istream& operator>> (istream& in, Instruction& instr);	// Overloaded input operator
+		Command(int value);		// Constructor
+		~Command();			// Destructor
+		virtual void draw();		// Virtual draw
 
-		virtual void draw();	// Virtual draw
-}
+};
+#endif

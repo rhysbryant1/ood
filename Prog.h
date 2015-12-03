@@ -3,6 +3,7 @@
 
 #include "Header.h"
 #include "Instruction.h"
+#include "draw.h"
 
 class InvalidInstructionTypeException{};
 

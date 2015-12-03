@@ -1,15 +1,9 @@
 #include "Command.h"
 
-// Default constructor
-Command::Command()
-{
-
-}
-
 // Constructor taking in the float value
-Command::Command(float value)
+Command::Command(float v)
 {
-
+	value = v;
 }
 
 // Destructor
@@ -18,11 +12,9 @@ Command::~Command()
 
 }
 
-istream& operator>> (istream& in, Instruction& instr)
+istream& operator>> (istream& in, Command& cmd)
 {
-	string instruction_type;
-	
-	in >> instruction_type >> ws >> instr.v;
+	in >> ws >> cmd.value;
 	
 	if (in.fail()) {
         throw IncompleteInstructionException();
