@@ -1,6 +1,7 @@
 #ifndef draw_hh
 #define draw_hh
 #include "Command.h"
+#include "window.h"
 
 using namespace std;
 
@@ -36,8 +37,8 @@ class Jump: public Command{
 
 class Repeat: public Command{
 	public:
-		Reapeat();			// Default Constructor
-		~Reapeat();			// Destructor
+		Repeat();			// Default Constructor
+		~Repeat();			// Destructor
 		void draw();			// Draw function for any repeat instruction
 };
 
