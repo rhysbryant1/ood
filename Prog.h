@@ -18,11 +18,4 @@ class Prog {
 		friend istream& operator>> (istream& in, Prog& prg);	// Overload input operator	
 		void run();
 };
-
-
-
-		
-
-
-
 #endif

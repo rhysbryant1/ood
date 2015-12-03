@@ -1,6 +1,4 @@
-
 #include <iostream>
-
 #include "Prog.h"
 
 void Prog::run()
