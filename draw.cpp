@@ -1,8 +1,8 @@
-#include "window.h"
 #include "draw.h"
-#include "Instruction.h"
-#include "Prog.h"
-#include "Header.h"
+//#include "Instruction.h"
+//#include "Command.h"
+//#include "Prog.h"
+//#include "Header.h"
 
 
 /*--------------------------------------------------------------*/
@@ -16,7 +16,7 @@ Left::~Left(){}				// Destructor
 void Left::draw()
 {
 	// Rotate around the z axis by the angle value for this instruction
-	glRotate(Left::value, 0, 0, 1)
+	glRotatef(Left::value, 0, 0, 1);
 }
 
 /*--------------------------------------------------------------*/
@@ -33,7 +33,7 @@ void Right::draw()
 	// Rotate around the z axis by the angle value for this instruction.
 	// This rotation will be negative to turn the other way.
 	int rotation(0 - Right::value);	
-	glRotate(rotation, 0, 0, 1)
+	glRotatef(rotation, 0, 0, 1);
 }
 
 /*--------------------------------------------------------------*/
@@ -49,7 +49,7 @@ void Forward::draw()
 	// Draw a line of a length for the value in this class
 	glBegin(GL_LINE_LOOP);
 		glVertex3f(0, 0, 0);				// Beginning of line
-		glVertex3f(Right::value, 0, 0);		// End of line
+		glVertex3f(Forward::value, 0, 0);		// End of line
 	glEnd();
 }
 
@@ -64,7 +64,7 @@ Jump::~Jump(){}				// Destructor
 void Jump::draw()
 {
 	// Translate the cursor for distance of the value in this class.
-	glTranslate(Jump::value, 0, 0)
+	glTranslatef(Jump::value, 0, 0);
 
 }
 
@@ -72,7 +72,7 @@ void Jump::draw()
 /* Repeat Class */
 /*--------------------------------------------------------------*/
 
-Repeat::Reapeat(){}			// Default Constructor
+Repeat::Repeat(){}			// Default Constructor
 Repeat::~Repeat(){}			// Destuctor
 
 // Draw function (Virtual)

@@ -1,12 +1,5 @@
-#include <fstream>
+#include <iostream>
 #include "Prog.h"
-
-// Default Constructor
-Prog::Prog()
-: num_instructions(0)		// Initialise with no instructions
-{
-
-}
 
 void Prog::run()
 {
@@ -65,12 +58,6 @@ istream& operator>> (istream& in, Prog& prg)
 	}
 
 	return in;
-}
-
-// Destructor
-Prog::~Prog()
-{
-
 }
 
 

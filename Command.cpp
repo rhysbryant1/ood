@@ -1,4 +1,5 @@
 #include "Command.h"
+#include "Instruction.h"
 
 // Constructor taking in the float value
 Command::Command(float v)

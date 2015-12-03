@@ -8,14 +8,13 @@ class IncompleteInstructionException{};
 class Command: public Instruction {
 
 	protected:
-		Command();			// Default constructor - can not be instantiated
+		Command() {};			// Default constructor - can not be instantiated
 		float value;
 	
 	public:
 		// Overloaded input operator
     		friend istream& operator>> (istream& in, Command& cmd);
-		
-		Command(int value);		// Constructor
+		Command(float value);		// Constructor
 		~Command();			// Destructor
 		virtual void draw();		// Virtual draw
 
