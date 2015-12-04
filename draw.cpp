@@ -1,4 +1,5 @@
 #include "draw.h"
+#include "window.h"
 //#include "Instruction.h"
 //#include "Command.h"
 //#include "Prog.h"
@@ -13,7 +14,7 @@ Left::Left(){}				// Default Constructor
 Left::~Left(){}				// Destructor
 
 // Draw function (Virtual)
-void Left::draw()
+void Left::Run()
 {
 	// Rotate around the z axis by the angle value for this instruction
 	glRotatef(Left::value, 0, 0, 1);
@@ -28,7 +29,7 @@ Right::~Right(){}			// Destuctor
 
 
 // Draw function (Virtual)
-void Right::draw()
+void Right::Run()
 {
 	// Rotate around the z axis by the angle value for this instruction.
 	// This rotation will be negative to turn the other way.
@@ -44,7 +45,7 @@ Forward::Forward(){}		// Default Constrcutor
 Forward::~Forward(){}		// Destructor
 
 // Draw function (Virtual)
-void Forward::draw()
+void Forward::Run()
 {
 	// Draw a line of a length for the value in this class
 	glBegin(GL_LINE_LOOP);
@@ -64,7 +65,7 @@ Jump::Jump(){}				// Default Constructor
 Jump::~Jump(){}				// Destructor
 
 // Draw function (Virtual)
-void Jump::draw()
+void Jump::Run()
 {
 	// Translate the cursor for distance of the value in this class.
 	glTranslatef(Jump::value, 0, 0);
@@ -79,7 +80,7 @@ Repeat::Repeat(){}			// Default Constructor
 Repeat::~Repeat(){}			// Destuctor
 
 // Draw function (Virtual)
-void Repeat::draw()
+void Repeat::Run()
 {
 
 }

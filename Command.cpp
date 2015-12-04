@@ -7,12 +7,6 @@ Command::Command(float v)
 	value = v;
 }
 
-// Destructor
-Command::~Command()
-{
-
-}
-
 istream& operator>> (istream& in, Command& cmd)
 {
 	in >> ws >> cmd.value;

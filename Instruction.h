@@ -10,7 +10,7 @@ class Instruction
 	public:
 		
 		virtual ~Instruction();
-		virtual void draw()=0;		// From Rich's design??
+		virtual void Run()=0;		// From Rich's design??
 };
 
 #endif

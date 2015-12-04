@@ -24,22 +24,19 @@ PROG=$(PROGNAME)
 OBJ=$(PROGNAME).o
 SRC=$(PROGNAME).cpp
 
-$(PROG): $(OBJ) Prog.o Instruction.o Command.o draw.o
-	 $(CC) $(OBJ) -L$(GLLIBDIR) -L$(GLUTLIBDIR) -L$(GLXLIB) $(GLLIB) -o $(PROG) 
+$(PROG): $(OBJ) Prog.o Command.o draw.o
+	 $(CC) $(OBJ) Prog.o draw.o Command.o -L$(GLLIBDIR) -L$(GLUTLIBDIR) -L$(GLXLIB) $(GLLIB) -o $(PROG)
 
-$(OBJ): $(SRC) Prog.h 
+$(OBJ): $(SRC) Prog.h
 	 $(CC) -I$(GLINCDIR) -I$(GLUTINCDIR) -c $(SRC)
 
-Prog.o: Prog.cpp Prog.h
+Prog.o: Prog.cpp Prog.h draw.h
 	$(CC) -c Prog.cpp
 
-Instruction.o: Instruction.cpp Instruction.h
-	$(CC) -c Instruction.cpp
-
-Command.o: Command.cpp Command.h
+Command.o: Command.cpp Command.h Instruction.h
 	$(CC) -c Command.cpp
 
-draw.o: draw.cpp draw.h
+draw.o: draw.cpp draw.h window.h
 	$(CC) -c draw.cpp
 
 

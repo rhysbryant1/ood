@@ -25,7 +25,7 @@ window::window(int argc, char** argv)
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);			
 	glEnable(GL_DEPTH_TEST);					
 	glDepthFunc(GL_LEQUAL);							
-    glEnable(GL_COLOR_MATERIAL );
+    	glEnable(GL_COLOR_MATERIAL );
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 	glutInitDisplayMode ( GLUT_RGB | GLUT_DOUBLE ); 
 	glutInitWindowSize  ( 500, 500 ); 

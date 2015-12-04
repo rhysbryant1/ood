@@ -15,8 +15,8 @@ class Command: public Instruction {
 		// Overloaded input operator
     		friend istream& operator>> (istream& in, Command& cmd);
 		Command(float value);		// Constructor
-		~Command();			// Destructor
-		virtual void draw();		// Virtual draw
+//		~Command() {};			// Destructor
+		virtual void Run()=0;		// Virtual draw
 
 };
 #endif
