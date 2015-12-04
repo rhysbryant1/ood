@@ -27,7 +27,7 @@ SRC=$(PROGNAME).cpp
 $(PROG): $(OBJ) Prog.o Command.o draw.o
 	 $(CC) $(OBJ) Prog.o draw.o Command.o -L$(GLLIBDIR) -L$(GLUTLIBDIR) -L$(GLXLIB) $(GLLIB) -o $(PROG)
 
-$(OBJ): $(SRC) Prog.h
+$(OBJ): $(SRC) Prog.h window.h
 	 $(CC) -I$(GLINCDIR) -I$(GLUTINCDIR) -c $(SRC)
 
 Prog.o: Prog.cpp Prog.h draw.h

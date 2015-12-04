@@ -1,12 +1,8 @@
 #ifndef draw_hh
 #define draw_hh
 #include "Command.h"
-//#include "window.h"
-
-//#include <GL/gl.h>     // The GL Header File
-//#include <GL/glut.h>   // The GL Utility Toolkit (Glut) Header
-
-using namespace std;
+#include <GL/gl.h>     // The GL Header File
+#include <GL/glut.h>   // The GL Utility Toolkit (Glut) Header
 
 
 class Left: public Command{
@@ -15,7 +11,6 @@ class Left: public Command{
 		~Left();			// Destructor
 		void Run();			// Draw function for any left instruction
 };
-
 
 class Right: public Command{
 	public:

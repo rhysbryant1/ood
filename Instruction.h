@@ -9,7 +9,7 @@ class Instruction
 
 	public:
 		
-		virtual ~Instruction();
+		virtual ~Instruction(){};
 		virtual void Run()=0;		// From Rich's design??
 };
 

@@ -1,10 +1,4 @@
 #include "draw.h"
-#include "window.h"
-//#include "Instruction.h"
-//#include "Command.h"
-//#include "Prog.h"
-//#include "Header.h"
-
 
 /*--------------------------------------------------------------*/
 /* Left Class */

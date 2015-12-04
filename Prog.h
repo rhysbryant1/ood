@@ -1,7 +1,5 @@
 #ifndef Prog_h
 #define Prog_h
-
-#include "Header.h"
 #include "Instruction.h"
 #include "draw.h"
 
