@@ -15,9 +15,14 @@ int main ( int argc, char** argv )
 {
 		
 	/* JL - ADD ERROR CHECKING FOR COMMAND LINE */
+	cout << "Command line argument is " << argv[1] << endl;
 	ifstream in(argv[1]);	// Open file from command line
-	
-	try { in >> P; }	// Push file contents into program
+	if (!in.fail()) { cout << "File read successful" << endl; }	
+
+	try {			// Push file contents into program
+		in >> P;
+		cout << "Instructions read" << endl;
+	}
 	catch (InvalidInstructionTypeException) {
 		cerr << "InvalidInstructionTypeException occurred" << endl;	
 	}

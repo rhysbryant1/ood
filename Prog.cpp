@@ -20,39 +20,42 @@ void Prog::run()
 // Input operator overload
 istream& operator>> (istream& in, Prog& prg)
 {
+	cout << "Prog input overload called" << endl;
+
 	string instruction_type;
 	
 	// Iterate through stream from file and build up vector of Instructions
-	for (int i(0); !in.eof(); i++) {
+	while (!in.eof()) {
 		
-		in >> ws >> instruction_type >> ws;			// Store instruction type
-		
+		in >> ws >> instruction_type >> ws;		// Store instruction type
+		//if (in.eof()) { break; }		
+
 		// Determine instruction type and instantiate accordingly.
 		// NOTE: vector contains pointers to Instructions, while memory contains Forward, Jump, Left, Right and Repeat classes.
 		if (instruction_type == "FORWARD") {
 			Forward* fwd = new Forward;		// Allocate memory for new Forward instruction
 			in >> (*fwd);				// Read value into instruction
-			prg.list[i] = (Instruction*)fwd;		// Store Instruction into vector (of type Instruction not Forward)
+			prg.list.insert ( prg.list.end(), (Instruction*)fwd );		// Store Instruction into vector (of type Instruction not Forward)
 		}
 		else if (instruction_type == "JUMP") {
 			Jump* jmp = new Jump;			// Allocate memory for new Jump instruction
 			in >> (*jmp);				// Read value into instruction
-			prg.list[i] = (Instruction*)jmp;		// Cast Instruction into vector (type is Instruction not Jump)
+			prg.list.insert ( prg.list.end(), (Instruction*)jmp );		// Cast Instruction into vector (type is Instruction not Jump)
 		}
 		else if (instruction_type == "LEFT") {
 			Left* lft = new Left;			// Allocate memory for new Left instruction
 			in >> (*lft);				// Read value into instruction
-			prg.list[i] = (Instruction*)lft;		// Store Instruction into vector (of type Instruction not Left)
+			prg.list.insert ( prg.list.end(), (Instruction*)lft );		// Store Instruction into vector (of type Instruction not Left)
 		}
 		else if (instruction_type == "RIGHT") {
 			Right* rgt = new Right;			// Allocate memory for new Right instruction
 			in >> (*rgt);				// Read value into instruction
-			prg.list[i] = (Instruction*)rgt;		// Store Instruction into vector (of type Instruction not Right)
+			prg.list.insert ( prg.list.end(), (Instruction*)rgt );		// Store Instruction into vector (of type Instruction not Right)
 		}
 		else if (instruction_type == "REPEAT") {
 			Repeat* rpt = new Repeat;		// Allocate memory for new Repeat instruction
 			in >> (*rpt);				// Read value into instruction
-			prg.list[i] = (Instruction*)rpt;		// Store Instruction into vector (of type Instruction not Repeat)
+			prg.list.insert ( prg.list.end(), (Instruction*)rpt );		// Store Instruction into vector (of type Instruction not Repeat)
 		}
 		else { throw InvalidInstructionTypeException(); }
 	}

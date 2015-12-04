@@ -9,10 +9,14 @@ Command::Command(float v)
 
 istream& operator>> (istream& in, Command& cmd)
 {
+	cout << "Command input operator overload called" << endl;
+
 	in >> ws >> cmd.value;
 	
+	cout << "Command value is " << cmd.value << endl;
+
 	if (in.fail()) {
-        throw IncompleteInstructionException();
+		throw IncompleteInstructionException();
 	}
 
 	return in;
