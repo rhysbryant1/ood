@@ -90,7 +90,7 @@ istream& operator>> (istream& in, Repeat& rpt)
 	
 	string dump; 
 	in >> ws >> dump >> ws;
-	in>>pr;
+	in>>*rpt.pr;
 	return in;
 }
 

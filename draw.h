@@ -6,6 +6,8 @@
 #include "Header.h"
 #include "Prog.h"
 	
+class Prog;
+	
 class Left: public Command{
 	public:
 		Left();				// Default Constructor
