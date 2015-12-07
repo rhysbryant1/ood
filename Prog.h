@@ -7,7 +7,6 @@ class InvalidInstructionTypeException{};
 
 class Prog {
 	private:
-	
 		vector <Instruction*> list;	// Vector (array) of Instructions
 
 	public:
