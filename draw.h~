@@ -1,3 +1,5 @@
+//#ifndef draw_hh
+//#define draw_hh
 #include "Command.h"
 #include <GL/gl.h>     		// The GL Header File
 #include <GL/glut.h>   		// The GL Utility Toolkit (Glut) Header
@@ -43,3 +45,5 @@ class Repeat: public Command{
 		friend istream& operator>> (istream& in, Repeat& rpt);	
 									
 };
+
+//#endif

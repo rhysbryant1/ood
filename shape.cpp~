@@ -25,7 +25,7 @@ int main ( int argc, char** argv )
 	}
 	
 	catch (InvalidFileNameException){
-		cerr << "Invalid filename given" << endl;
+		cerr << "Invalid filename given" << endl
 	}
 	
 	catch (InvalidInstructionTypeException) {

@@ -70,11 +70,15 @@ Repeat::~Repeat(){}			// Destuctor
 
 istream& operator>> (istream& in, Repeat& rpt)
 {
+	#if 0
 	in >> ws >> rpt.value;				// Read in value from stream
 
 	if (in.fail()) {
 		throw IncompleteInstructionException();
 	}
+	#endif
+	
+	in cmd::>> ws :cmd:>> rpt.value;
 
 	string first_bracket; 
 	in >> ws >> first_bracket >> ws;	// Remove ws and square bracket repeat command

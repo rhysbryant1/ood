@@ -5,7 +5,7 @@ class IncompleteInstructionException{};
 class Command: public Instruction {
 
 	protected:
-		Command() {};				// Default constructor - can not be instantiated
+		Command() {};			// Default constructor - can not be instantiated
 		float value;
 			
 	public:
