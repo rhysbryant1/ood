@@ -102,9 +102,9 @@ Repeat::istream& operator>> (istream& in, Repeat& rpt)
 // Draw function (Virtual)
 void Repeat::Run()
 {
-	for (int repeat_count = 0; repeat_count < value; repeat_count++)
+	for (int repeat_count =0; repeat_count <value; repeat_count ++)
 	{ 
-		Pr.run();
+	Pr.run();
 	}
 	
 }

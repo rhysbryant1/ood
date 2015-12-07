@@ -34,7 +34,6 @@ class Jump: public Command{
 };
 
 class Repeat: public Command, public Prog{
-	private:
 		Prog pr;
 	public:
 		Repeat();			// Default Constructor

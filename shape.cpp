@@ -8,7 +8,7 @@ Prog P;
 
 void draw(void)   
 {
-//	P.run();
+	P.run();
 }
 
 int main ( int argc, char** argv )
@@ -29,7 +29,7 @@ int main ( int argc, char** argv )
 	catch (IncompleteInstructionException) {
 		cerr << "IncompleteInstructionException occurred" << endl;
 	}
-
+	draw();
 	in.close();		// Close file
 	window w(argc, argv);	
 	
