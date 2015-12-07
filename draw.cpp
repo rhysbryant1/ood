@@ -46,11 +46,11 @@ void Forward::Run()
 	// Draw a line of a length for the value in this class
 	glBegin(GL_LINE_LOOP);
 		glVertex3f(0, 0, 0);					// Beginning of line
-		glVertex3f(0, Forward::value, 0);		// End of line
+		glVertex3f(Forward::value, 0, 0);		// End of line
 	glEnd();
 	
 	// Translate to the new vector loaction
-	glTranslatef(0, Forward::value, 0);
+	glTranslatef(Forward::value, 0, 0);
 }
 
 /*--------------------------------------------------------------*/
@@ -64,7 +64,7 @@ Jump::~Jump(){}				// Destructor
 void Jump::Run()
 {
 	// Translate the cursor for distance of the value in this class.
-	glTranslatef(0, Jump::value, 0);
+	glTranslatef(Jump::value, 0, 0);
 
 }
 
