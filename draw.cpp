@@ -90,7 +90,7 @@ istream& operator>> (istream& in, Repeat& rpt)
 	
 	string dump; 
 	in >> ws >> dump >> ws;
-	in>>*rpt.pr;
+	in>>rpt.pr;
 	return in;
 }
 
@@ -101,7 +101,7 @@ cout << value<<endl;
 cout<< "Repeat Run fucntion called"<<endl;
 	for (int repeat_count = 0; repeat_count < value; repeat_count++)
 	{ 
-		pr->run();
+		pr.run();
 	}
 	
 }

@@ -1,7 +1,6 @@
 #ifndef Prog_h
 #define Prog_h
 #include "Instruction.h"
-#include "draw.h"
 
 class InvalidInstructionTypeException{};
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Prog.h"
+#include "draw.h"
 
 void Prog::run()
 {

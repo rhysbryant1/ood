@@ -1,12 +1,9 @@
-#ifndef draw_hh
-#define draw_hh
+//#ifndef draw_hh
+//#define draw_hh
 #include "Command.h"
 #include <GL/gl.h>     // The GL Header File
 #include <GL/glut.h>   // The GL Utility Toolkit (Glut) Header
-#include "Header.h"
 #include "Prog.h"
-	
-class Prog;
 	
 class Left: public Command{
 	public:
@@ -38,7 +35,7 @@ class Jump: public Command{
 
 class Repeat: public Command{
 	private:
-		Prog* pr;
+		Prog pr;
 	public:
 		Repeat();			// Default Constructor
 		~Repeat();			// Destructor
@@ -48,4 +45,4 @@ class Repeat: public Command{
 							// Overload input operator		
 };
 
-#endif
+//#endif

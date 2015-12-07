@@ -1,9 +1,8 @@
 #ifndef shape_cpp
 #define shape_cpp
-#include "Header.h"
 #include "window.h"
 #include "Prog.h"
-
+#include "Command.h"
 Prog P;
 
 void draw(void)   

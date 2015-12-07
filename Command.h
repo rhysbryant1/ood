@@ -1,6 +1,3 @@
-#ifndef Command_hh
-#define Command_hh
-#include "Header.h"
 #include "Instruction.h"
 
 class IncompleteInstructionException{};
@@ -19,4 +16,3 @@ class Command: public Instruction {
 		virtual void Run()=0;		// Virtual draw
 
 };
-#endif
