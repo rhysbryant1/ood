@@ -4,6 +4,8 @@
 /* Left Class */
 /*--------------------------------------------------------------*/
 
+
+
 Left::Left(){}				// Default Constructor
 Left::~Left(){}				// Destructor
 
@@ -43,12 +45,12 @@ void Forward::Run()
 {
 	// Draw a line of a length for the value in this class
 	glBegin(GL_LINE_LOOP);
-		glVertex3f(0, 0, 0);				// Beginning of line
-		glVertex3f(Forward::value, 0, 0);		// End of line
+		glVertex3f(0, 0, 0);					// Beginning of line
+		glVertex3f(0, Forward::value, 0);		// End of line
 	glEnd();
 	
 	// Translate to the new vector loaction
-	glTranslatef(Forward::value, 0, 0);
+	glTranslatef(0, Forward::value, 0);
 }
 
 /*--------------------------------------------------------------*/
@@ -62,7 +64,7 @@ Jump::~Jump(){}				// Destructor
 void Jump::Run()
 {
 	// Translate the cursor for distance of the value in this class.
-	glTranslatef(Jump::value, 0, 0);
+	glTranslatef(0, Jump::value, 0);
 
 }
 
@@ -74,7 +76,7 @@ Repeat::Repeat(){}			// Default Constructor
 Repeat::~Repeat(){}			// Destuctor
 
 
-Repeat::istream& operator>> (istream& in, Repeat& rpt)
+istream& operator>> (istream& in, Repeat& rpt)
 {
 	cout << "Command input operator overload called" << endl;
 
@@ -85,26 +87,21 @@ Repeat::istream& operator>> (istream& in, Repeat& rpt)
 	if (in.fail()) {
 		throw IncompleteInstructionException();
 	}
-
 	
 	string dump; 
 	in >> ws >> dump >> ws;
-	in>>Pr;
+	in>>pr;
 	return in;
-
-	
-
-
 }
-
-
 
 // Draw function (Virtual)
 void Repeat::Run()
 {
+cout << value<<endl;
+cout<< "Repeat Run fucntion called"<<endl;
 	for (int repeat_count = 0; repeat_count < value; repeat_count++)
 	{ 
-		Pr.run();
+		pr->run();
 	}
 	
 }

@@ -2,7 +2,7 @@
 #define Command_hh
 #include "Header.h"
 #include "Instruction.h"
-
+#include "Prog.h"
 class IncompleteInstructionException{};
 
 class Command: public Instruction {
@@ -10,7 +10,7 @@ class Command: public Instruction {
 	protected:
 		Command() {};			// Default constructor - can not be instantiated
 		float value;
-			
+			Prog pr;
 	public:
 		// Overloaded input operator
     		friend istream& operator>> (istream& in, Command& cmd);

@@ -29,17 +29,15 @@ $(PROG): $(OBJ) Prog.o Command.o draw.o
 
 $(OBJ): $(SRC) Prog.h window.h
 	 $(CC) -I$(GLINCDIR) -I$(GLUTINCDIR) -c $(SRC)
-	 
-draw.o: draw.cpp draw.h window.h
-	$(CC) -c draw.cpp
-	
+
 Prog.o: Prog.cpp Prog.h draw.h
 	$(CC) -c Prog.cpp
 
 Command.o: Command.cpp Command.h Instruction.h
 	$(CC) -c Command.cpp
 
-
+draw.o: draw.cpp draw.h window.h
+	$(CC) -c draw.cpp
 
 
 clean: 

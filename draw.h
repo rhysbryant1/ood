@@ -3,8 +3,9 @@
 #include "Command.h"
 #include <GL/gl.h>     // The GL Header File
 #include <GL/glut.h>   // The GL Utility Toolkit (Glut) Header
+#include "Header.h"
 #include "Prog.h"
-
+	
 class Left: public Command{
 	public:
 		Left();				// Default Constructor
@@ -33,17 +34,16 @@ class Jump: public Command{
 		void Run();			// Draw function for any jump instruction
 };
 
-class Repeat: public Command, public Prog{
+class Repeat: public Command{
 	private:
-		Prog pr;
+		Prog* pr;
 	public:
 		Repeat();			// Default Constructor
 		~Repeat();			// Destructor
 		void Run();			// Draw function for any repeat instruction
 		
-		friend istream& operator>> (istream& in, Prog& prg);	
+		friend istream& operator>> (istream& in, Repeat& rpt);	
 							// Overload input operator		
-	
 };
 
 #endif
