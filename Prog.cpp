@@ -24,7 +24,7 @@ istream& operator>> (istream& in, Prog& prg)
 		
 		if (in.eof() || instruction_type == "]") { 
 			reached_end = true; 									// Check for end of file or '[' marker
-			}				
+		}				
 
 		/* ----------------- Determine instruction type and instantiate accordingly. -------------------------- */
 		/* ---- NOTE: vector contains pointers to Instructions, while memory contains Instruction classes. ---- */

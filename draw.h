@@ -2,7 +2,7 @@
 #include <GL/gl.h>     		// The GL Header File
 #include <GL/glut.h>   		// The GL Utility Toolkit (Glut) Header
 #include "Prog.h"
-	
+
 class Left: public Command{
 	public:
 		Left();				// Default Constructor

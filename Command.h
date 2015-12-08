@@ -1,6 +1,7 @@
 #include "Instruction.h"
 
 class IncompleteInstructionException{};
+class InvalidRepeatException{};
 
 class Command: public Instruction {
 

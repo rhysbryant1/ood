@@ -3,8 +3,10 @@
 #include "window.h"
 #include "Prog.h"
 #include "Command.h"
-Prog P;
+
 class InvalidFileNameException{};
+
+Prog P;
 
 void draw(void)   
 {
@@ -24,7 +26,7 @@ int main ( int argc, char** argv )
 		in >> P;			// Push file contents into program
 	}
 	
-	catch (InvalidFileNameException){
+	catch (InvalidFileNameException) {
 		cerr << "Invalid filename given" << endl;
 	}
 	
@@ -35,9 +37,13 @@ int main ( int argc, char** argv )
 	catch (IncompleteInstructionException) {
 		cerr << "Incomplete Instruction Exception occurred" << endl;
 	}
-		
-	draw();
+
+	catch (InvalidRepeatException) {
+		cerr << "Invalid Repeat Exception occurred" << endl;
+	}
+
 	in.close();				// Close file
+	draw();
 	window w(argc, argv);	
 	
 	return 0;

@@ -9,8 +9,7 @@ Command::Command(float v)
 
 istream& operator>> (istream& in, Command& cmd)
 {
-	in >> ws >> cmd.value;							// Read in the value after the command
-
+	in >> ws >> cmd.value;
 	if (in.fail()) {
 		throw IncompleteInstructionException();
 	}
